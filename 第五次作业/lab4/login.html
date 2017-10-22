@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<link  rel="stylesheet" href="jquery.mobile-1.4.5.min.css"/>
+		<script src="jquery.js"></script>
+		<script src="jquery.mobile-1.4.5.min.js"></script>
+		<style>
+			.ui-bar-g{
+				background-color: deepskyblue;
+			}
+			.ui-body-g{
+				background-color: deepskyblue;
+			}
+			a:link,a:visited{
+				text-decoration:none;
+			}
+		</style>
+	</head>
+	<body>
+	<div data-role="page" id="page1">
+		<div data-role='header' data-theme="g">
+			<h1>QQ登录</h1>
+		</div>
+		<div data-role='content'>
+			<div id="qq" align="center">
+				<img src="img/qq.jpg" />
+			</div>
+			<input type="text" id="username"  placeholder="账号:"/>
+			<input type="password" id="password"  placeholder="密码:"/>
+			<input type="button" value="登录" id="login">
+			<a href="qq.html" style="float: right;">返回上一次登录&nbsp;&nbsp;</a>
+		</div>
+		<div data-role="footer"  data-position="fixed"  data-theme="g">
+			<h1>@腾讯QQ</h1>
+		</div>
+	</div>
+	</body>
+	<script>
+		$('#login').click(function(){
+				$.ajax({
+					type:"get",
+					url:"http://datainfo.duapp.com/shopdata/userinfo.php",
+					datatype:'json',
+					data:{
+						status:'login',
+						userID:$("#username").val(),
+						password:$("#password").val(),
+					},
+					success:function(info){
+						switch(info){
+							case '0':
+								alert("用户名不存在");
+								break;
+							case '2':
+								alert("账号密码不一致");
+								break;
+						}
+						if(info['1']==$('#username').val()){
+							window.location.href = 'qq.html';
+						}
+					}
+				});
+		})
+	</script>
+</html>

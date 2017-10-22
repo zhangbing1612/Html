@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<link  rel="stylesheet" href="js/jquery.mobile-1.4.5.min.css"/>
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery.mobile-1.4.5.min.js"></script>
+		<style>
+			.ui-bar-g{
+				background-color: deepskyblue;
+			}
+			.ui-body-g{
+				background-color: deepskyblue;
+			}
+			a:link,a:visited{
+				text-decoration:none;
+			}
+		</style>
+	</head>
+	<body>
+		<div data-role='page' id="page1">
+			<div data-role='header' >
+				<h1>QQ注册</h1>
+			</div>
+			<div data-role='content'>
+				<div id="qq" align="center">
+					<img src="img/qq.jpg" />
+				</div>
+				<input type="text"  placeholder="账号:" id="username"/>
+				<input type="password"  placeholder="密码:" id="password1"/>
+				<input type="password"  placeholder="确认密码:" id="password2" />
+				<input type="button" value="注册" id="register" >
+				<a href="login.html">已有账号返回登录</a>
+			</div>
+			<div data-role="footer"  data-position="fixed"  >
+				<h1>@腾讯QQ</h1>
+			</div>
+		</div>
+	</body>
+	<script>
+		$('#register').click(function(){
+			if($('#password1').val()===$('#password2').val()){
+				$.ajax({
+					type:"get",
+					url:"http://datainfo.duapp.com/shopdata/userinfo.php",
+					data:{
+						status:'register',
+						userID:$("#username").val(),
+						password:$("#password1").val(),
+					},
+					success:function(info){
+						switch(info){
+							case '0':
+								alert("用户名重名");
+								break;
+							case '1':
+								alert("注册成功");
+								window.location.href="login.html";
+								break;
+							case '2':
+								alert("数据库错误");
+								break;
+						}
+					}
+				});
+			}else{
+				alert("两次密码不一样");
+			}
+		})
+	</script>
+</html>

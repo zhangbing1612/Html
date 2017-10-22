@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="js/jquery.mobile-1.4.5.min.css" />
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery.mobile-1.4.5.min.js"></script>
+		<style>
+			.ui-bar-g{
+				background-color: deepskyblue;
+			}
+			.ui-body-g{
+				background-color: deepskyblue;
+			}
+			.ui-icon-l{
+				background-image: url(img/狗.jpg.jpg);
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+			}
+			.ui-icon-ll{
+				background-image: url(img/狗.jpg.jpg);
+				background-size: 60% 60%;
+				background-repeat: no-repeat;
+			}
+			.qone{
+				widows: 50px;
+				height: 50px;
+			}
+			   .ui-block-a
+			    {
+			    font-weight: bold;
+			   	text-align: center;
+			    padding: 10px;
+			    
+			    }
+			    .ui-block-b 
+			    {
+			    font-weight: bold;
+			   	text-align: center;
+			    padding: 10px;
+			    
+			    }
+			    .ui-block-c
+			    {
+			    font-weight: bold;
+			   	text-align: center;
+			    padding: 10px;
+			    
+			    
+			    }
+			    a{
+			    	text-decoration: none;
+			    }
+				.a1 p{
+					color: #000000;
+				}
+		</style>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#ma").on("tap","li",function(){
+					$("#ma").prepend($(this));
+				})
+			})
+		</script>
+	</head>
+	<body>
+	<!--第一个page-->
+		<div data-role="page" id="page1"> 
+			
+			<div data-role="header" data-theme="g">
+				<a href="#page2" data-role="button" data-icon="l" data-iconpos="notext"></a>
+        	    <h1>QQ消息</h1>
+        	    <a href="#" data-role="button" data-icon="plus" data-iconpos="notext" class="ui-li-icon"></a>
+        	</div>
+        
+   			 <div data-role="content" > 
+   			 	<div data-type="vertical">
+   			 		<ul data-role="listview" data-filter="true" data-filter-placeholder="搜索" id="ma">
+						<li><a href="#"><img src="img/狗.jpg.jpg" class="ui-li-icon"/>好友1</a></li>
+						<li><a href="#"><img src="img/狗.jpg.jpg" class="ui-li-icon"/>好友2</a></li>
+						<li><a href="#"><img src="img/狗.jpg.jpg" class="ui-li-icon"/>好友3</a></li>
+						<li><a href="#"><img src="img/狗.jpg.jpg" class="ui-li-icon"/>好友4</a></li>
+						<li><a href="#"><img src="img/狗.jpg.jpg" class="ui-li-icon"/>好友5</a></li>
+						<li><a href="#"><img src="img/狗.jpg.jpg" class="ui-li-icon"/>好友6</a></li>
+						<li><a href="#"><img src="img/狗.jpg.jpg" class="ui-li-icon"/>好友7</a></li>
+						<li><a href="#"><img src="img/狗.jpg.jpg" class="ui-li-icon"/>好友8</a></li>
+						<li><a href="#"><img src="img/狗.jpg.jpg" class="ui-li-icon"/>好友9</a></li>
+						<li><a href="#"><img src="img/狗.jpg.jpg" class="ui-li-icon"/>好友10</a></li>
+					</ul>
+
+				</div>
+   			 </div>
+        	
+	 		<div data-role="footer" data-position="fixed" data-theme="g"> 
+        	    <div data-role="navbar">
+        	    	<ul>
+        	    		<li><a href="#page1" data-role="button" data-icon="message" class="ui-btn-active ui-state-persist">消息</a></li>
+        	    		<li><a href="#page2" data-role="button" data-icon="home">主页</a></li>
+        	    		<li><a href="#page3" data-role="button" data-icon="star">动态</a></li>
+        	    	</ul>
+        	    </div>
+        	</div>
+		</div>
+
+	
+
+		<div data-role="page" id="page2"> 
+<div data-role="header" data-theme="g">
+				<a href="#page1" data-role="button" data-icon="l" data-iconpos="notext"></a>
+        	    <h1>联系人</h1>
+        	    <a href="#" data-role="button" data-icon="plus" data-iconpos="notext" class="ui-li-icon"></a>
+        	</div>
+        
+   			 <div data-role="content"> 
+   			 	<div data-type="vertical">
+   			 		<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="搜索">
+						<li><a href="#" data-role="list-divider" data-iconpos='left'>新朋友</a></li>
+					</ul>
+					<div data-role='collapsible' data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+						<h1>特别关心</h1>
+						<ul data-role="listview">
+							<li><a href="#"><img src="img/狗.jpg.jpg" class="ui-li-icon"/>爱</a></li>
+						</ul>
+					</div>
+					<div data-role='collapsible' data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+						<h1>分组1</h1>
+						<ul data-role="listview">
+							<li><a href="#"><img src="img/狗.jpg.jpg" class="ui-li-icon"/>好友1</a></li>
+							<li><a href="#"><img src="img/狗.jpg.jpg " class="ui-li-icon"/>好友2</a></li>
+							<li><a href="#"><img src="img/狗.jpg.jpg" class="ui-li-icon"/>好友3</a></li>
+							<li><a href="#"><img src="img/狗.jpg.jpg" class="ui-li-icon"/>好友4</a></li>
+						</ul>
+
+					</div>
+					<div data-role='collapsible' data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+						<h1>分组2</h1>
+						<ul data-role="listview">
+							<li><a href="#"><img src="img/狗.jpg.jpg" class="ui-li-icon"/>好友1</a></li>
+							<li><a href="#"><img src="img/狗.jpg.jpg" class="ui-li-icon"/>好友2</a></li>
+							<li><a href="#"><img src="img/狗.jpg.jpg" class="ui-li-icon"/>好友3</a></li>
+							<li><a href="#"><img src="img/狗.jpg.jpg" class="ui-li-icon"/>好友4</a></li>
+						</ul>
+
+					</div>
+					<div data-role='collapsible' data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+						<h1>分组3</h1>
+						<ul data-role="listview">
+							<li><a href="#"><img src="img/狗.jpg.jpg" class="ui-li-icon"/>好友1</a></li>
+							<li><a href="#"><img src="img/狗.jpg.jpg" class="ui-li-icon"/>好友2</a></li>
+							<li><a href="#"><img src="img/狗.jpg.jpg" class="ui-li-icon"/>好友3</a></li>
+							<li><a href="#"><img src="img/狗.jpg.jpg" class="ui-li-icon"/>好友4</a></li>
+						</ul>
+
+					</div>
+				</div>
+   			 </div>
+        	
+	 		<div data-role="footer" data-position="fixed" data-theme="g"> 
+        	    <div data-role="navbar">
+        	    	<ul>
+        	    		<li><a href="#page1" data-role="button" data-icon="message" class="ui-btn-active ui-state-persist">消息</a></li>
+        	    		<li><a href="#page2" data-role="button" data-icon="home">主页</a></li>
+        	    		<li><a href="#page3" data-role="button" data-icon="star">动态</a></li>
+        	    	</ul>
+        	    </div>
+        	</div>
+		</div>
+	<!--第二个page结束-->
+	<div data-role="page" id="page3"> 
+			
+			<div data-role="header">
+				<a href="#page2" data-role="button" data-icon="l" data-iconpos="notext"></a>
+        	    <h1>动态</h1>
+        	    <a >更多</a>
+        	</div>
+        
+   			 <div data-role="content"> 
+   			 	<div data-type="vertical">
+   			 		<ul data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="大家都在搜：">
+					</ul>
+				</div>
+	<div  class="ui-grid-b" >
+				<div class="ui-block-b">
+					<a href="#" class="a1">
+					<img src="img/center.jpg.jpg" class="qone"/>
+					<p >好友动态</p>
+					</a>
+				</div>
+				<div class="ui-block-b" >
+					<a href="#"  class="a1">
+					<img src="img/fujin.jpg" class="qone"/>
+					<p >附近</p>
+					</a>
+				</div>
+				<div class="ui-block-c" >
+					<a href="#"  class="a1">
+					<img src="img/xingqubuluo.jpg" class="qone"/>
+					<p >好友动态</p>
+					</a>
+				</div>
+	</div>
+  </div>
+        	<div data-role='content'>
+        		<ul data-role='listview'>
+        			<li><a href="#" ><img src="img/1.jpg" class="ui-li-icon"/>游戏</a></li>
+        			<li><a href="#"><img src="img/1508301575209.jpg" class="ui-li-icon" />日迹</a></li>
+        			<li><a href="#"><img src="img/1508301658767.jpg" class="ui-li-icon" />看点</a></li>
+        			<li><a href="#"><img src="img/1508301716499.jpg" class="ui-li-icon" />动漫</a></li>
+        		</ul>
+        	</div>
+	 		<div data-role="footer" data-position="fixed" > 
+        	    <div data-role="navbar">
+        	    	<ul>
+        	    		<li><a href="#page1" data-role="button" data-icon="message" class="ui-btn-active ui-state-persist">消息</a></li>
+        	    		<li><a href="#page2" data-role="button" data-icon="home">主页</a></li>
+        	    		<li><a href="#page3" data-role="button" data-icon="star">动态</a></li>
+        	    	</ul>
+        	    </div>
+        	</div>
+		</div>
+	</body>
+</html>
